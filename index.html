@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Simple QR Code Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="card">
+    <h1>Simple QR Code Generator</h1>
+    <p class="lead">Enter any URL or text and click <strong>Generate</strong> to create a QR code.</p>
+
+    <div class="grid">
+      <div>
+        <label for="text">URL or text</label>
+        <input id="text" type="text" placeholder="https://example.com or any text" />
+
+        <div class="options">
+          <div class="opt">
+            <label for="size">Size (px)</label>
+            <select id="size">
+              <option value="128">128</option>
+              <option value="256" selected>256</option>
+              <option value="512">512</option>
+            </select>
+          </div>
+
+          <div class="opt">
+            <label for="ec">Error correction</label>
+            <select id="ec">
+              <option value="L">L</option>
+              <option value="M" selected>M</option>
+              <option value="Q">Q</option>
+              <option value="H">H</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button id="generate">Generate</button>
+          <button id="clear" class="ghost" type="button">Clear</button>
+        </div>
+
+    
+
+      <div>
+        <label>Preview</label>
+        <div class="preview">
+          <div id="qrcode"></div>
+          <div class="btn-row">
+            <button id="download">Download PNG</button>
+            <button id="copy" class="ghost">Copy URL</button>
+          </div>
+          <small id="status">Ready</small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
